@@ -20,7 +20,9 @@
 html,
 body {
   height: 100%;
-  overflow: hidden;
+
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto;
 }
 
 body {
@@ -334,14 +336,13 @@ Hero
 }
 
 .hero-container a {
-  text-decoration: none; /* Remove default underline */
-  color: var(--clr-primary-7); /* Adjust color as needed */
-  position: relative; /* Ensure the pseudo-element is positioned correctly */
+  text-decoration: none;
+  color: var(--clr-primary-7);
+  position: relative;
 }
 
 .hero-container a:hover {
-  /* Add underline on hover */
-  color: #f4bc21; /* Optional: Change color on hover */
+  color: #f4bc21;
 }
 
 /* Resume Link & Arrow */
@@ -374,10 +375,11 @@ Hero
   .hero {
     background: var(--clr-primary-1);
   }
-  .hero-banner {
-    padding: 0;
+  .hero-info {
+    text-align: left;
+    max-width: 45%;
   }
-  .hero-banner p {
+  .hero p {
     max-width: 45rem;
   }
 }
@@ -385,10 +387,21 @@ Hero
 @media screen and (max-width: 767px) {
   .hero-container {
     display: block;
-    padding: 5px;
+    padding: 1rem;
+    text-align: center;
   }
-  .hero-image {
+
+  .work-button {
     display: none;
+  }
+
+  .image-frame {
+    display: none;
+  }
+
+  .hero-info {
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   .hero {
@@ -396,12 +409,75 @@ Hero
     text-align: center;
   }
 
-  .hero-info {
-    text-align: center;
-    max-width: 90%;
+  .hero p {
+    max-width: 30rem; /* Limit paragraph width for readability */
+    margin: 1rem auto; /* Center text */
   }
+}
 
-  .hero-banner p {
-    max-width: 30rem;
-  }
+/* Portfolio Section */
+.portfolio {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.portfolio-title {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #001f3f; /* Primary font color */
+}
+
+/* Portfolio Container */
+.portfolio-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem; /* Space between cards */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Portfolio Card */
+.portfolio-card {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid #001f3f;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.portfolio-card:hover {
+  transform: scale(1.05); /* Subtle hover effect */
+  border-color: #634e99;
+}
+
+.card-image {
+  width: 100%;
+  height: 150px;
+  background-color: #fff;
+  border: 2px solid #001f3f;
+  margin-bottom: 1rem;
+}
+
+/* Project Title */
+.project-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #001f3f;
+}
+
+/* Tech Stack */
+.tech-stack {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #634e99; /* Highlighted subheading */
+}
+
+/* Project Description */
+.project-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #20458e;
 }
